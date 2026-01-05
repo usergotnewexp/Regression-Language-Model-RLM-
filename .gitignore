@@ -25,7 +25,7 @@ data/*.hdf5
 *.pth
 *.pt
 *.ckpt
-*.h5
+models/**/*.h5
 *.pb
 models/
 checkpoints/

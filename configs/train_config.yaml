@@ -1,0 +1,80 @@
+# Regression Language Model Configuration
+
+# Data settings
+data:
+  data_dir: "data"
+  test_size: 0.2
+  val_size: 0.1
+  random_state: 42
+
+# Model architecture
+model:
+  size: "base"  # Options: small, base, large
+  max_len: 128
+  d_model: 256
+  num_heads: 8
+  num_layers: 4
+  dim_feedforward: 1024
+  dropout: 0.1
+
+# Training configuration
+training:
+  # Basic settings
+  n_epochs: 50
+  batch_size: 32
+  num_workers: 4
+  seed: 42
+  device: "auto"  # auto, cuda, cpu
+  
+  # Optimization
+  lr: 0.0001
+  max_lr: 0.001
+  weight_decay: 0.01
+  betas: [0.9, 0.999]
+  max_grad_norm: 1.0
+  
+  # Loss function
+  loss_type: "hybrid"  # Options: mse, mae, hybrid
+  loss_alpha: 0.5  # Only for hybrid loss
+  
+  # Learning rate scheduling
+  scheduler_type: "onecycle"  # Options: onecycle, plateau, none
+  
+  # Early stopping
+  early_stopping: true
+  patience: 7
+  min_delta: 0.001
+  
+  # Mixed precision
+  use_amp: true
+  
+  # Checkpointing
+  checkpoint_dir: "checkpoints"
+  log_dir: "logs"
+  save_every_n_epochs: 5
+
+# Evaluation
+evaluation:
+  metrics:
+    - mae
+    - mse
+    - rmse
+    - r2
+  
+# Inference
+inference:
+  batch_size: 64
+  uncertainty_samples: 50
+
+# Logging
+logging:
+  use_wandb: false
+  use_mlflow: false
+  project_name: "regression-language-model"
+  experiment_name: "rlm-baseline"
+
+# Baseline comparison
+baseline:
+  tfidf_max_features: 5000
+  rf_n_estimators: 100
+  rf_max_depth: 10
