@@ -365,9 +365,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-**Your Name** - [@yourtwitter](https://twitter.com/yourtwitter) - your.email@example.com
+**Aryan Gahlot** -aryangahlot50@gmail.com
 
-Project Link: [https://github.com/yourusername/regression-language-model](https://github.com/yourusername/regression-language-model)
+Project Link: [https://github.com/usergotnewexp/regression-language-model](https://github.com/yourusername/regression-language-model)
 
 ---
 
